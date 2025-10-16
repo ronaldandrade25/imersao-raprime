@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso de Barbeiro Profissional - RA Barbearia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0f172a] text-white">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <header class="bg-[#0f172a] p-6 text-center border-b border-yellow-400" data-animate>
+        <img src="./assets/logo-ra-baberaria1.png" alt="Logo RA Barbearia" class="mx-auto mb-4 w-24 h-24" />
+        <h1 class="text-4xl md:text-5xl font-bold text-yellow-400">Curso de Barbeiro Profissional</h1>
+        <p class="text-lg mt-2 text-gray-300">Transforme sua paixão em profissão com nosso curso completo</p>
+    </header>
+
+    <section class="bg-black p-8" data-animate>
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-center text-yellow-400">Assista ao vídeo de apresentação</h2>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-96 rounded-xl" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#1e293b] p-8 text-center" data-animate>
+        <div class="max-w-4xl mx-auto text-white">
+            <h2 class="text-3xl font-bold mb-4 text-yellow-400">Sobre a Barbearia</h2>
+            <p class="text-lg">A RA Barbearia é referência em estilo e atendimento. Com anos de experiência, formamos
+                barbeiros de sucesso que atuam em todo o Brasil. Nosso ambiente é moderno, nossas técnicas atualizadas,
+                e nossa equipe apaixonada pelo que faz.</p>
+        </div>
+    </section>
+
+    <section class="bg-[#0f172a] p-8 text-center" data-animate>
+        <div class="max-w-4xl mx-auto text-white">
+            <h2 class="text-3xl font-bold mb-4 text-yellow-400">Sobre o Professor</h2>
+            <p class="text-lg">O curso é ministrado por Rodrigo Alves, barbeiro há mais de 15 anos, especializado em
+                cortes clássicos e modernos. Rodrigo já formou mais de 2.000 alunos e é conhecido por seu ensino
+                prático, direto e motivador. Ele vai te acompanhar do zero ao profissionalismo.</p>
+        </div>
+    </section>
+
+    <section class="bg-white text-gray-900 p-8 text-center" data-animate>
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-yellow-600">Cronograma de Estudos</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <li class="bg-gray-100 p-4 rounded-xl shadow">Semana 1: Fundamentos da Barbearia e Higiene</li>
+                <li class="bg-gray-100 p-4 rounded-xl shadow">Semana 2: Técnicas de Corte Masculino</li>
+                <li class="bg-gray-100 p-4 rounded-xl shadow">Semana 3: Corte Degradê, Fade e Navalhado</li>
+                <li class="bg-gray-100 p-4 rounded-xl shadow">Semana 4: Design de Barba e Acabamentos</li>
+                <li class="bg-gray-100 p-4 rounded-xl shadow">Semana 5: Atendimento ao Cliente e Marketing</li>
+                <li class="bg-gray-100 p-4 rounded-xl shadow">Semana 6: Prática Supervisionada e Certificação</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bg-[#1e293b] text-white p-8 text-center" data-animate>
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-yellow-400">Depoimentos de Alunos</h2>
+            <div class="flex overflow-x-auto gap-4 snap-x">
+                <div class="min-w-[300px] bg-white text-gray-900 rounded-xl p-4 shadow snap-start">
+                    <p class="text-lg font-semibold">"Nunca imaginei que aprenderia tanto em tão pouco tempo. Curso top
+                        demais!"</p>
+                    <p class="mt-2 text-sm text-gray-600">— Lucas Ferreira</p>
+                </div>
+                <div class="min-w-[300px] bg-white text-gray-900 rounded-xl p-4 shadow snap-start">
+                    <p class="text-lg font-semibold">"O professor é muito didático e o suporte foi essencial pra minha
+                        evolução."</p>
+                    <p class="mt-2 text-sm text-gray-600">— Mariana Costa</p>
+                </div>
+                <div class="min-w-[300px] bg-white text-gray-900 rounded-xl p-4 shadow snap-start">
+                    <p class="text-lg font-semibold">"Já estou atendendo clientes e ganhando meu dinheiro. Obrigado!"
+                    </p>
+                    <p class="mt-2 text-sm text-gray-600">— Rafael Souza</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#0f172a] text-white text-center p-8" data-animate>
+        <div class="max-w-xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-yellow-400">Garanta sua vaga agora!</h2>
+            <p class="mb-6 text-lg">Curso completo com certificado, acesso vitalício e suporte direto com os
+                instrutores. Comece sua carreira hoje mesmo!</p>
+            <div class="text-2xl font-bold mb-4 text-yellow-300" id="countdown">Oferta termina em: --:--:--</div>
+            <div class="bg-white text-gray-900 p-6 rounded-2xl shadow-lg mb-6">
+                <input type="text" placeholder="Seu nome" class="w-full p-3 rounded-lg border border-gray-300 mb-4" />
+                <input type="email" placeholder="Seu melhor e-mail"
+                    class="w-full p-3 rounded-lg border border-gray-300 mb-4" />
+                <a href="https://wa.me/SEUNUMERO?text=Tenho%20interesse%20no%20curso%20de%20barbeiro" target="_blank"
+                    class="block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg text-center transition-all">
+                    Quero Me Inscrever via WhatsApp
+                </a>
+            </div>
+            <p class="text-sm text-gray-400">100% online • Garantia de 7 dias • Acesso vitalício</p>
+        </div>
+    </section>
+
+    <footer class="bg-[#1e293b] text-yellow-500 p-4 text-center">
+        <p>&copy; 2025 RA Barbearia. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const countdownElement = document.getElementById('countdown');
+        const countdownTarget = new Date(Date.now() + 3 * 60 * 60 * 1000);
+        const updateCountdown = () => {
+            const now = new Date();
+            const diff = countdownTarget - now;
+            if (diff <= 0) {
+                countdownElement.innerText = 'Oferta encerrada';
+                return;
+            }
+            const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+            const minutes = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+            const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+            countdownElement.innerText = `Oferta termina em: ${hours}:${minutes}:${seconds}`;
+        };
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+
+</html>
